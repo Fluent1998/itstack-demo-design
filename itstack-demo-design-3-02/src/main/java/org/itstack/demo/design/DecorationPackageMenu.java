@@ -8,12 +8,22 @@ import java.util.List;
  * 装修包
  */
 public class DecorationPackageMenu implements IMenu {
-
-    private List<Matter> list = new ArrayList<Matter>();  // 装修清单
-    private BigDecimal price = BigDecimal.ZERO;      // 装修价格
-
-    private BigDecimal area;  // 面积
-    private String grade;     // 装修等级；豪华欧式、轻奢田园、现代简约
+    /**
+     * 装修清单
+     */
+    private List<Matter> list = new ArrayList<Matter>();
+    /**
+     * 装修价格
+     */
+    private BigDecimal price = BigDecimal.ZERO;
+    /**
+     * 面积
+     */
+    private BigDecimal area;
+    /**
+     * 装修等级；豪华欧式、轻奢田园、现代简约
+     */
+    private String grade;
 
     private DecorationPackageMenu() {
     }

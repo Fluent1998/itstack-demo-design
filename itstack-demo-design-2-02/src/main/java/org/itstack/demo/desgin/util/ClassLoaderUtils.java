@@ -27,6 +27,7 @@ public class ClassLoaderUtils {
      * @return ClassLoader
      */
     public static ClassLoader getCurrentClassLoader() {
+        /*获取当前正在运行线程的上下文ClassLoader*/
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
         if (cl == null) {
             cl = ClassLoaderUtils.class.getClassLoader();
@@ -106,7 +107,7 @@ public class ClassLoaderUtils {
             return null;
         }
         if (clazz.isMemberClass() && !Modifier.isStatic(clazz.getModifiers())) {
-            Constructor constructorList[] = clazz.getDeclaredConstructors();
+            Constructor[] constructorList = clazz.getDeclaredConstructors();
             Constructor defaultConstructor = null;
             for (Constructor con : constructorList) {
                 if (con.getParameterTypes().length == 1) {
