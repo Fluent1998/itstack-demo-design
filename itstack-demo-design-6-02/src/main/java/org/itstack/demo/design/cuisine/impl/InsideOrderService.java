@@ -5,10 +5,10 @@ import org.itstack.demo.design.service.OrderService;
 
 public class InsideOrderService implements OrderAdapterService {
 
-    private OrderService orderService = new OrderService();
+	private OrderService orderService = new OrderService();
 
-    public boolean isFirst(String uId) {
-        return orderService.queryUserOrderCount(uId) <= 1;
-    }
+	public boolean isFirst(String uId) {
+		return orderService.queryUserOrderCount(uId) <= 1;
+	}
 
 }

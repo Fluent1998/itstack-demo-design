@@ -9,14 +9,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ApiTest {
 
-    private Logger logger = LoggerFactory.getLogger(ApiTest.class);
+	private Logger logger = LoggerFactory.getLogger(ApiTest.class);
 
-    @Test
-    public void test_IUserDao() {
-        BeanFactory beanFactory = new ClassPathXmlApplicationContext("spring-config.xml");
-        IUserDao userDao = beanFactory.getBean("userDao", IUserDao.class);
-        String res = userDao.queryUserInfo("100001");
-        logger.info("测试结果：{}", res);
-    }
+	@Test
+	public void test_IUserDao() {
+		BeanFactory beanFactory = new ClassPathXmlApplicationContext("spring-config.xml");
+		IUserDao userDao = beanFactory.getBean("userDao", IUserDao.class);
+		String res = userDao.queryUserInfo("100001");
+		logger.info("测试结果：{}", res);
+	}
 
 }

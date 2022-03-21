@@ -4,6 +4,6 @@ import org.itstack.demo.design.po.School;
 
 public interface ISchoolDao {
 
-    School querySchoolInfoById(Long treeId);
+	School querySchoolInfoById(Long treeId);
 
 }

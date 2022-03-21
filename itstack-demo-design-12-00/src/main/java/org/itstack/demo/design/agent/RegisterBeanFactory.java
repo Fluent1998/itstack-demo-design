@@ -10,22 +10,23 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 public class RegisterBeanFactory implements BeanDefinitionRegistryPostProcessor {
-    
-    @Override
-    public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        
-        GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
-        beanDefinition.setBeanClass(MapperFactoryBean.class);
-        beanDefinition.setScope("singleton");
-        beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(IUserDao.class);
 
-        BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(beanDefinition, "userDao");
-        BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, registry);
-    }
+	@Override
+	public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
 
-    @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-        // left intentionally blank
-    }
+		GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
+		beanDefinition.setBeanClass(MapperFactoryBean.class);
+		beanDefinition.setScope("singleton");
+		beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(IUserDao.class);
+
+		BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(beanDefinition, "userDao");
+		BeanDefinitionReaderUtils.registerBeanDefinition(definitionHolder, registry);
+	}
+
+	@Override
+	public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory)
+			throws BeansException {
+		// left intentionally blank
+	}
 
 }

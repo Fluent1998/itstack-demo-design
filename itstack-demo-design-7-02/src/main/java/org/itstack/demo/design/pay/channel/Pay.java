@@ -8,14 +8,14 @@ import java.math.BigDecimal;
 
 public abstract class Pay {
 
-    protected Logger logger = LoggerFactory.getLogger(Pay.class);
+	protected Logger logger = LoggerFactory.getLogger(Pay.class);
 
-    protected IPayMode payMode;
+	protected IPayMode payMode;
 
-    public Pay(IPayMode payMode) {
-        this.payMode = payMode;
-    }
+	public Pay(IPayMode payMode) {
+		this.payMode = payMode;
+	}
 
-    public abstract String transfer(String uId, String tradeId, BigDecimal amount);
+	public abstract String transfer(String uId, String tradeId, BigDecimal amount);
 
 }

@@ -11,23 +11,23 @@ import org.slf4j.LoggerFactory;
 
 public class ApiTest {
 
-    private Logger logger = LoggerFactory.getLogger(ApiTest.class);
+	private Logger logger = LoggerFactory.getLogger(ApiTest.class);
 
-    @Test
-    public void test() {
+	@Test
+	public void test() {
 
-        // 初始化数据
-        String activityId = "100001";
-        ActivityService.init(activityId, Status.Editing);
+		// 初始化数据
+		String activityId = "100001";
+		ActivityService.init(activityId, Status.Editing);
 
-        ActivityExecStatusController activityExecStatusController = new ActivityExecStatusController();
-        Result resultRefuse = activityExecStatusController.execStatus(activityId, Status.Editing, Status.Refuse);
+		ActivityExecStatusController activityExecStatusController = new ActivityExecStatusController();
+		Result resultRefuse = activityExecStatusController.execStatus(activityId, Status.Editing, Status.Refuse);
 
-        logger.info("测试结果(编辑中To审核拒绝)：{}", JSON.toJSONString(resultRefuse));
+		logger.info("测试结果(编辑中To审核拒绝)：{}", JSON.toJSONString(resultRefuse));
 
-        Result resultCheck = activityExecStatusController.execStatus(activityId, Status.Editing, Status.Check);
-        logger.info("测试结果(编辑中To提交审核)：{}", JSON.toJSONString(resultCheck));
+		Result resultCheck = activityExecStatusController.execStatus(activityId, Status.Editing, Status.Check);
+		logger.info("测试结果(编辑中To提交审核)：{}", JSON.toJSONString(resultCheck));
 
-    }
+	}
 
 }

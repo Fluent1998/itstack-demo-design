@@ -2,8 +2,8 @@ package org.itstack.demo.design.lang;
 
 public interface Iterator<E> {
 
-    boolean hasNext();
+	boolean hasNext();
 
-    E next();
-    
+	E next();
+
 }

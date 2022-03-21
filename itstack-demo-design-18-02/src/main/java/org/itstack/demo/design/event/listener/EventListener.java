@@ -4,6 +4,6 @@ import org.itstack.demo.design.LotteryResult;
 
 public interface EventListener {
 
-    void doEvent(LotteryResult result);
+	void doEvent(LotteryResult result);
 
 }
